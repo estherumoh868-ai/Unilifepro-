@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#A78BFA"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="UniLife"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojQTc4QkZBIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzYwQTVGQSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPCEtLSBCYWNrZ3JvdW5kIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTIwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDwhLS0gQm9vayAtLT4KICA8cmVjdCB4PSIxMjAiIHk9IjIyMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSIxMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz4KICA8cmVjdCB4PSIxNDAiIHk9IjI0MCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNBNzhCRkEiLz4KICA8cmVjdCB4PSIxNDAiIHk9IjI2OCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNBNzhCRkEiIG9wYWNpdHk9IjAuNiIvPgogIDxyZWN0IHg9IjE0MCIgeT0iMjk2IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI0E3OEJGQSIgb3BhY2l0eT0iMC40Ii8+CiAgPHJlY3QgeD0iMTk2IiB5PSIyMjAiIHdpZHRoPSI4IiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0E3OEJGQSIgb3BhY2l0eT0iMC4zIi8+CiAgPCEtLSBHcmFkdWF0aW9uIENhcCAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1Niw4MCAzNzAsMTQwIDI1NiwxNzAgMTQyLDE0MCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz4KICA8cmVjdCB4PSIzNDQiIHk9IjE0MCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYwIiByeD0iNiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOCIvPgogIDxlbGxpcHNlIGN4PSIzNTAiIGN5PSIyMDUiIHJ4PSIxOCIgcnk9IjEyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC44Ii8+CiAgPHJlY3QgeD0iMjIwIiB5PSIxNjMiIHdpZHRoPSI3MiIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjciLz4KPC9zdmc+Cg=="/>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojQTc4QkZBIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzYwQTVGQSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPCEtLSBCYWNrZ3JvdW5kIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTIwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDwhLS0gQm9vayAtLT4KICA8cmVjdCB4PSIxMjAiIHk9IjIyMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSIxMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz4KICA8cmVjdCB4PSIxNDAiIHk9IjI0MCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNBNzhCRkEiLz4KICA8cmVjdCB4PSIxNDAiIHk9IjI2OCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNBNzhCRkEiIG9wYWNpdHk9IjAuNiIvPgogIDxyZWN0IHg9IjE0MCIgeT0iMjk2IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI0E3OEJGQSIgb3BhY2l0eT0iMC40Ii8+CiAgPHJlY3QgeD0iMTk2IiB5PSIyMjAiIHdpZHRoPSI4IiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0E3OEJGQSIgb3BhY2l0eT0iMC4zIi8+CiAgPCEtLSBHcmFkdWF0aW9uIENhcCAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1Niw4MCAzNzAsMTQwIDI1NiwxNzAgMTQyLDE0MCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz4KICA8cmVjdCB4PSIzNDQiIHk9IjE0MCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYwIiByeD0iNiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOCIvPgogIDxlbGxpcHNlIGN4PSIzNTAiIGN5PSIyMDUiIHJ4PSIxOCIgcnk9IjEyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC44Ii8+CiAgPHJlY3QgeD0iMjIwIiB5PSIxNjMiIHdpZHRoPSI3MiIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjciLz4KPC9zdmc+Cg=="/>
+<title>UniLife Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%;overflow:hidden}
+body{background:#0A0A0F;font-family:'DM Sans',sans-serif;color:#F0EEF8}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:rgba(167,139,250,.3);border-radius:4px}
+button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;outline:none}
+input,select,textarea{font-family:'DM Sans',sans-serif;outline:none;border:none}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-100%)}to{opacity:1;transform:translateX(0)}}
+@keyframes confettiBurst{0%{opacity:1;transform:translateX(-50%) scale(.4) translateY(0)}100%{opacity:0;transform:translateX(-50%) scale(2) translateY(-60px)}}
+.fade{animation:fadeIn .3s ease}
+.slide-up{animation:slideUp .3s ease}
+.drawer-anim{animation:slideLeft .25s ease}
+.confetti{animation:confettiBurst 1s ease forwards;pointer-events:none;position:absolute;font-size:26px;top:-12px;left:50%;z-index:30}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<script type="text/babel">
+const {useState,useEffect,useRef}=React;
+
+const DEPARTMENTS={
+  "Engineering":["Mathematics","Physics","Chemistry","Engineering Drawing","Introduction to Computing","Thermodynamics","Fluid Mechanics","Circuit Theory","Structural Analysis","Materials Science"],
+  "Medicine":["Anatomy","Physiology","Biochemistry","Pharmacology","Pathology","Microbiology","Community Health","Surgery","Internal Medicine","Obstetrics & Gynaecology"],
+  "Law":["Constitutional Law","Criminal Law","Contract Law","Tort Law","Land Law","Equity & Trusts","Commercial Law","International Law","Human Rights Law","Legal Writing"],
+  "Business":["Microeconomics","Macroeconomics","Accounting","Marketing","Management","Business Statistics","Finance","Entrepreneurship","Business Law","Strategic Management"],
+  "Computer Science":["Programming Fundamentals","Data Structures","Algorithms","Database Systems","Operating Systems","Computer Networks","Software Engineering","Artificial Intelligence","Web Development","Cyber Security"],
+  "Arts & Humanities":["Literature","History","Philosophy","Linguistics","Cultural Studies","Creative Writing","Media Studies","Fine Arts","Music Theory","Sociology"],
+  "Sciences":["Biology","Chemistry","Physics","Mathematics","Statistics","Environmental Science","Genetics","Ecology","Organic Chemistry","Calculus"],
+  "Education":["Educational Psychology","Curriculum Development","Teaching Methods","Child Development","Classroom Management","Assessment & Evaluation","Special Education","Educational Technology","School Administration","Counselling"],
+  "Nursing":["Anatomy","Physiology","Pharmacology","Nursing Ethics","Medical-Surgical Nursing","Paediatric Nursing","Psychiatric Nursing","Community Health Nursing","Midwifery","Research Methods"],
+  "Architecture":["Design Studio","Building Technology","Architectural History","Structural Systems","Environmental Design","Urban Planning","Computer-Aided Design","Professional Practice","Building Services","Interior Design"],
+  "Other":[]
+};
+
+const CATS={
+  academic:{label:"Academic",icon:"🎓",color:"#A78BFA"},
+  social:{label:"Social",icon:"🎉",color:"#FB7185"},
+  health:{label:"Health",icon:"💪",color:"#34D399"},
+  errands:{label:"Errands",icon:"🛒",color:"#FBBF24"},
+  self:{label:"Self-care",icon:"🧘",color:"#60A5FA"},
+  finance:{label:"Finance",icon:"💰",color:"#34D399"},
+  work:{label:"Work",icon:"💼",color:"#F472B6"},
+  creative:{label:"Creative",icon:"🎨",color:"#FB923C"},
+};
+
+const GRADE_SCALE=[
+  {grade:"A+",min:90,gp:4.0},{grade:"A",min:85,gp:4.0},{grade:"A-",min:80,gp:3.7},
+  {grade:"B+",min:75,gp:3.3},{grade:"B",min:70,gp:3.0},{grade:"B-",min:65,gp:2.7},
+  {grade:"C+",min:60,gp:2.3},{grade:"C",min:55,gp:2.0},{grade:"C-",min:50,gp:1.7},
+  {grade:"D",min:40,gp:1.0},{grade:"F",min:0,gp:0.0}
+];
+
+const QUOTES=["You didn't come this far to only come this far. 🔥","Rest is productive. You're doing great. ☀️","One task at a time. That's all it takes. 🧩","Your future self is cheering you on. 🎉","Progress, not perfection. Keep going! 💫"];
+
+function todayStr(){const d=new Date();return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;}
+function fmtDate(d){const x=new Date(d);return`${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,"0")}-${String(x.getDate()).padStart(2,"0")}`;}
+function addD(n){const d=new Date();d.setDate(d.getDate()+n);return fmtDate(d);}
+function relDay(ds){const diff=Math.round((new Date(ds+"T12:00:00")-new Date(todayStr()+"T12:00:00"))/86400000);if(diff===0)return"Today";if(diff===1)return"Tomorrow";if(diff===-1)return"Yesterday";return diff<0?`${-diff}d ago`:`in ${diff}d`;}
+function getGrade(s){return GRADE_SCALE.find(g=>s>=g.min)||GRADE_SCALE[GRADE_SCALE.length-1];}
+function calcGPA(cs){const v=cs.filter(c=>c.score!==""&&c.credits);if(!v.length)return 0;const t=v.reduce((s,c)=>s+getGrade(Number(c.score)).gp*Number(c.credits),0);const cr=v.reduce((s,c)=>s+Number(c.credits),0);return cr?t/cr:0;}
+function load(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch{return d;}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}}
+function fmtTime(s){return`${String(Math.floor(s/60)).padStart(2,"0")}:${String(s%60).padStart(2,"0")}`;}
+function fmtM(n){return`₦${Number(n).toLocaleString()}`;}
+
+const TODAY=todayStr();
+const SEEDS=[
+  {id:1,title:"Submit research paper draft",cat:"academic",priority:"high",date:TODAY,done:false,note:"Chapter 3 needs citations",course:""},
+  {id:2,title:"Study for midterm",cat:"academic",priority:"high",date:addD(4),done:false,note:"",course:""},
+  {id:3,title:"Gym session",cat:"health",priority:"medium",date:TODAY,done:true,note:"Leg day 💪",course:""},
+  {id:4,title:"Grocery run",cat:"errands",priority:"low",date:addD(1),done:false,note:"Milk, eggs, rice",course:""},
+  {id:5,title:"Call mum & dad",cat:"social",priority:"medium",date:TODAY,done:false,note:"",course:""},
+  {id:6,title:"Pay rent",cat:"finance",priority:"high",date:addD(3),done:false,note:"Bank transfer",course:""},
+  {id:7,title:"Laundry",cat:"errands",priority:"low",date:TODAY,done:false,note:"",course:""},
+  {id:8,title:"Reply to internship email",cat:"work",priority:"high",date:TODAY,done:false,note:"",course:""},
+];
+
+// ── Shared UI ────────────────────────────────────────────────────────────────
+const GBtn=({onClick,children,style={}})=>(<button onClick={onClick} style={{padding:"11px 18px",borderRadius:12,background:"linear-gradient(135deg,#A78BFA,#60A5FA)",color:"#fff",fontWeight:800,fontSize:14,boxShadow:"0 0 16px rgba(167,139,250,.3)",...style}}>{children}</button>);
+const FIn=({style={},...p})=>(<input {...p} style={{width:"100%",padding:"10px 13px",borderRadius:10,background:"rgba(255,255,255,.06)",color:"#F0EEF8",fontSize:13,border:"1.5px solid rgba(255,255,255,.1)",...style}}/>);
+const FSel=({children,style={},...p})=>(<select {...p} style={{width:"100%",padding:"10px 13px",borderRadius:10,background:"rgba(255,255,255,.06)",color:"#F0EEF8",fontSize:13,border:"1.5px solid rgba(255,255,255,.1)",...style}}>{children}</select>);
+const Empty=({msg,onAdd})=>(<div style={{textAlign:"center",padding:"36px 0",opacity:.35}}><div style={{fontSize:36,marginBottom:8}}>🌿</div><div style={{fontSize:13,fontWeight:700}}>{msg||"Nothing here!"}</div>{onAdd&&<button onClick={onAdd} style={{marginTop:10,padding:"7px 16px",borderRadius:9,background:"rgba(255,255,255,.07)",color:"rgba(240,238,248,.6)",fontSize:12,fontWeight:700}}>+ Add</button>}</div>);
+
+function Modal({onClose,title,children,actions}){
+  return(<div onClick={onClose} style={{position:"fixed",inset:0,background:"rgba(0,0,0,.8)",backdropFilter:"blur(10px)",display:"flex",alignItems:"flex-end",justifyContent:"center",zIndex:200,animation:"fadeIn .2s ease"}}>
+    <div onClick={e=>e.stopPropagation()} style={{background:"#13131A",border:"1px solid rgba(167,139,250,.15)",borderRadius:"20px 20px 0 0",padding:"20px 18px max(28px,env(safe-area-inset-bottom))",width:"100%",maxWidth:480,animation:"slideUp .25s ease"}}>
+      <div style={{width:32,height:3,borderRadius:2,background:"rgba(255,255,255,.15)",margin:"0 auto 16px"}}/>
+      <div style={{fontSize:16,fontWeight:800,fontFamily:"'Syne',sans-serif",marginBottom:14}}>{title}</div>
+      <div style={{display:"flex",flexDirection:"column",gap:9}}>{children}</div>
+      <div style={{display:"flex",gap:8,marginTop:14}}>{actions}</div>
+    </div>
+  </div>);
+}
+
+// ── App ──────────────────────────────────────────────────────────────────────
+function App(){
+  const [screen,setScreen]=useState(()=>load("ul_screen","setup"));
+  const [profile,setProfile]=useState(()=>load("ul_profile",{name:"",department:"",level:"100",customCourses:[]}));
+  const [tasks,setTasks]=useState(()=>load("ul_tasks",SEEDS));
+  const [grades,setGrades]=useState(()=>load("ul_grades",[]));
+  const [budget,setBudget]=useState(()=>load("ul_budget",{income:[],expenses:[],limit:50000}));
+  const [tab,setTab]=useState("tasks");
+  const [quote]=useState(QUOTES[Math.floor(Math.random()*QUOTES.length)]);
+
+  useEffect(()=>save("ul_screen",screen),[screen]);
+  useEffect(()=>save("ul_profile",profile),[profile]);
+  useEffect(()=>save("ul_tasks",tasks),[tasks]);
+  useEffect(()=>save("ul_grades",grades),[grades]);
+  useEffect(()=>save("ul_budget",budget),[budget]);
+
+  if(screen==="setup") return <Setup profile={profile} setProfile={setProfile} onDone={()=>setScreen("app")}/>;
+
+  const TABS=[["tasks","✅","Tasks"],["grades","📊","Grades"],["pomodoro","⏱️","Timer"],["budget","💰","Budget"]];
+  const TITLES={tasks:"My Tasks",grades:"Grade Tracker",pomodoro:"Study Timer",budget:"Budget"};
+
+  return(
+    <div style={{height:"100%",display:"flex",flexDirection:"column",background:"#0A0A0F"}}>
+      {/* Header */}
+      <div style={{padding:"12px 16px 10px",background:"rgba(167,139,250,.05)",borderBottom:"1px solid rgba(167,139,250,.1)",flexShrink:0}}>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+          <div style={{display:"flex",alignItems:"center",gap:10}}>
+            <div style={{width:36,height:36,borderRadius:10,background:"linear-gradient(135deg,#A78BFA,#60A5FA)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,boxShadow:"0 0 16px rgba(167,139,250,.4)"}}>🎓</div>
+            <div>
+              <div style={{fontFamily:"'Syne',sans-serif",fontSize:16,fontWeight:800}}>{TITLES[tab]}</div>
+              <div style={{fontSize:10,opacity:.4}}>{profile.name} · {profile.department} · {profile.level}L</div>
+            </div>
+          </div>
+          <button onClick={()=>setScreen("setup")} style={{background:"rgba(255,255,255,.06)",color:"rgba(240,238,248,.5)",padding:"6px 12px",borderRadius:8,fontSize:11,fontWeight:700}}>⚙️ Edit Profile</button>
+        </div>
+      </div>
+      {/* Screen */}
+      <div style={{flex:1,overflow:"hidden"}}>
+        {tab==="tasks"    && <TasksScreen tasks={tasks} setTasks={setTasks} profile={profile} quote={quote}/>}
+        {tab==="grades"   && <GradesScreen grades={grades} setGrades={setGrades} profile={profile}/>}
+        {tab==="pomodoro" && <PomodoroScreen/>}
+        {tab==="budget"   && <BudgetScreen budget={budget} setBudget={setBudget}/>}
+      </div>
+      {/* Bottom nav */}
+      <div style={{display:"flex",background:"rgba(10,10,15,.97)",borderTop:"1px solid rgba(167,139,250,.12)",padding:"8px 0 max(8px,env(safe-area-inset-bottom))",flexShrink:0}}>
+        {TABS.map(([v,ic,lb])=>(
+          <button key={v} onClick={()=>setTab(v)} style={{flex:1,display:"flex",flexDirection:"column",alignItems:"center",gap:2,background:"none",color:tab===v?"#A78BFA":"rgba(240,238,248,.3)",fontSize:9,fontWeight:tab===v?800:500,padding:"4px 0"}}>
+            <span style={{fontSize:22}}>{ic}</span>{lb}
+            {tab===v&&<div style={{width:18,height:2,borderRadius:2,background:"#A78BFA",marginTop:1}}/>}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── Setup ────────────────────────────────────────────────────────────────────
+function Setup({profile,setProfile,onDone}){
+  const [step,setStep]=useState(0);
+  const [form,setForm]=useState({...profile,customCourses:profile.customCourses||[]});
+  const [ci,setCi]=useState("");
+  const depts=Object.keys(DEPARTMENTS);
+  const addC=()=>{if(!ci.trim())return;setForm(f=>({...f,customCourses:[...(f.customCourses||[]),ci.trim()]}));setCi("");};
+  const finish=()=>{if(!form.name.trim()||!form.department)return;setProfile(form);onDone();};
+  return(
+    <div style={{height:"100%",background:"linear-gradient(135deg,#0A0A0F,#130F1E)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:24,overflowY:"auto"}}>
+      <div style={{width:"100%",maxWidth:400}}>
+        <div style={{textAlign:"center",marginBottom:32}}>
+          <div style={{fontSize:52,marginBottom:12}}>🎓</div>
+          <div style={{fontFamily:"'Syne',sans-serif",fontSize:28,fontWeight:800,background:"linear-gradient(135deg,#A78BFA,#60A5FA)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>UniLife Pro</div>
+          <div style={{fontSize:13,opacity:.4,marginTop:4}}>Your complete student companion</div>
+        </div>
+        {step===0&&<div className="slide-up">
+          <div style={{fontSize:11,fontWeight:700,opacity:.5,marginBottom:6}}>YOUR NAME</div>
+          <input value={form.name} onChange={e=>setForm(f=>({...f,name:e.target.value}))} placeholder="e.g. Esther" style={{width:"100%",padding:"12px 14px",borderRadius:12,background:"rgba(167,139,250,.08)",color:"#F0EEF8",fontSize:15,border:"1.5px solid rgba(167,139,250,.25)",marginBottom:16}}/>
+          <div style={{fontSize:11,fontWeight:700,opacity:.5,marginBottom:6}}>DEPARTMENT</div>
+          <select value={form.department} onChange={e=>setForm(f=>({...f,department:e.target.value}))} style={{width:"100%",padding:"12px 14px",borderRadius:12,background:"rgba(167,139,250,.08)",color:"#F0EEF8",fontSize:14,border:"1.5px solid rgba(167,139,250,.25)",marginBottom:16}}>
+            <option value="">Select your department…</option>
+            {depts.map(d=><option key={d} value={d}>{d}</option>)}
+          </select>
+          <div style={{fontSize:11,fontWeight:700,opacity:.5,marginBottom:8}}>CURRENT LEVEL</div>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:6,marginBottom:24}}>
+            {["100","200","300","400","500"].map(l=>(
+              <button key={l} onClick={()=>setForm(f=>({...f,level:l}))} style={{padding:"10px 0",borderRadius:10,fontSize:13,fontWeight:700,background:form.level===l?"linear-gradient(135deg,#A78BFA,#60A5FA)":"rgba(255,255,255,.06)",color:form.level===l?"#fff":"rgba(240,238,248,.4)"}}>{l}L</button>
+            ))}
+          </div>
+          <GBtn onClick={()=>form.name&&form.department&&setStep(1)} style={{width:"100%"}}>Next →</GBtn>
+        </div>}
+        {step===1&&<div className="slide-up">
+          <div style={{fontSize:11,fontWeight:700,opacity:.5,marginBottom:6}}>YOUR COURSES ({form.department})</div>
+          <div style={{fontSize:12,opacity:.4,marginBottom:10}}>We've added your department's courses. You can add more below.</div>
+          <div style={{maxHeight:200,overflowY:"auto",marginBottom:10,display:"flex",flexDirection:"column",gap:4}}>
+            {(DEPARTMENTS[form.department]||[]).map(c=>(
+              <div key={c} style={{padding:"8px 12px",borderRadius:8,background:"rgba(167,139,250,.08)",border:"1px solid rgba(167,139,250,.15)",fontSize:12,color:"#A78BFA",fontWeight:600}}>🎓 {c}</div>
+            ))}
+            {(form.customCourses||[]).map((c,i)=>(
+              <div key={i} style={{display:"flex",alignItems:"center",gap:8,padding:"8px 12px",borderRadius:8,background:"rgba(96,165,250,.08)",border:"1px solid rgba(96,165,250,.15)"}}>
+                <span style={{flex:1,fontSize:12,color:"#60A5FA",fontWeight:600}}>✨ {c}</span>
+                <button onClick={()=>setForm(f=>({...f,customCourses:f.customCourses.filter((_,j)=>j!==i)}))} style={{background:"none",color:"rgba(240,238,248,.3)",fontSize:14,padding:"0 4px"}}>✕</button>
+              </div>
+            ))}
+          </div>
+          <div style={{display:"flex",gap:8,marginBottom:20}}>
+            <input value={ci} onChange={e=>setCi(e.target.value)} onKeyDown={e=>e.key==="Enter"&&addC()} placeholder="Add extra course…" style={{flex:1,padding:"10px 12px",borderRadius:10,background:"rgba(255,255,255,.06)",color:"#F0EEF8",fontSize:13,border:"1.5px solid rgba(255,255,255,.1)"}}/>
+            <button onClick={addC} style={{padding:"10px 14px",borderRadius:10,background:"rgba(167,139,250,.2)",color:"#A78BFA",fontWeight:800,fontSize:18}}>+</button>
+          </div>
+          <div style={{display:"flex",gap:8}}>
+            <button onClick={()=>setStep(0)} style={{flex:1,padding:12,borderRadius:12,background:"rgba(255,255,255,.06)",color:"rgba(240,238,248,.5)",fontWeight:700,fontSize:14}}>← Back</button>
+            <GBtn onClick={finish} style={{flex:2}}>Let's go! 🚀</GBtn>
+          </div>
+        </div>}
+      </div>
+    </div>
+  );
+}
+
+// ── Tasks ────────────────────────────────────────────────────────────────────
+function TasksScreen({tasks,setTasks,profile,quote}){
+  const [view,setView]=useState("today");
+  const [fCat,setFCat]=useState("all");
+  const [showDone,setShowDone]=useState(true);
+  const [search,setSearch]=useState("");
+  const [drawer,setDrawer]=useState(false);
+  const [modal,setModal]=useState(false);
+  const [editId,setEditId]=useState(null);
+  const [confetti,setConfetti]=useState(null);
+  const [selDate,setSelDate]=useState(TODAY);
+  const [calYear,setCalYear]=useState(new Date().getFullYear());
+  const [calMonth,setCalMonth]=useState(new Date().getMonth());
+  const [animKey,setAnimKey]=useState(0);
+  const [form,setForm]=useState({title:"",cat:"academic",priority:"medium",date:TODAY,note:"",course:""});
+  const allCourses=[...((profile.department&&DEPARTMENTS[profile.department])||[]),...(profile.customCourses||[])];
+  const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+  const todayTasks=tasks.filter(t=>t.date===TODAY);
+  const doneCnt=todayTasks.filter(t=>t.done).length;
+  const progress=todayTasks.length?Math.round(doneCnt/todayTasks.length*100):0;
+
+  const tick=id=>{const t=tasks.find(x=>x.id===id);setTasks(ts=>ts.map(x=>x.id===id?{...x,done:!x.done}:x));if(t&&!t.done){setConfetti(id);setTimeout(()=>setConfetti(null),1100);}};
+  const openAdd=d=>{setForm({title:"",cat:"academic",priority:"medium",date:d||selDate,note:"",course:""});setEditId(null);setModal(true);};
+  const openEdit=t=>{setForm({title:t.title,cat:t.cat,priority:t.priority,date:t.date,note:t.note||"",course:t.course||""});setEditId(t.id);setModal(true);};
+  const saveTask=()=>{if(!form.title.trim())return;editId?setTasks(ts=>ts.map(t=>t.id===editId?{...t,...form}:t)):setTasks(ts=>[...ts,{...form,id:Date.now(),done:false}]);setModal(false);};
+  const delTask=id=>{setTasks(ts=>ts.filter(t=>t.id!==id));setModal(false);};
+  const filtered=list=>list.filter(t=>fCat==="all"||t.cat===fCat).filter(t=>showDone||!t.done).filter(t=>!search||t.title.toLowerCase().includes(search.toLowerCase()));
+  const viewTasks=()=>{if(view==="today")return filtered(tasks.filter(t=>t.date===TODAY)).sort((a,b)=>a.done-b.done);if(view==="calendar")return filtered(tasks.filter(t=>t.date===selDate)).sort((a,b)=>a.done-b.done);return filtered([...tasks]).sort((a,b)=>a.date.localeCompare(b.date)||(a.done-b.done));};
+  const prevCal=()=>{setAnimKey(k=>k+1);calMonth===0?(setCalMonth(11),setCalYear(y=>y-1)):setCalMonth(m=>m-1);};
+  const nextCal=()=>{setAnimKey(k=>k+1);calMonth===11?(setCalMonth(0),setCalYear(y=>y+1)):setCalMonth(m=>m+1);};
+  const dim=(y,m)=>new Date(y,m+1,0).getDate();
+  const fd=(y,m)=>new Date(y,m,1).getDay();
+
+  return(<div style={{height:"100%",display:"flex",flexDirection:"column",overflow:"hidden"}}>
+    <div style={{padding:"10px 14px",display:"flex",gap:8,flexShrink:0,borderBottom:"1px solid rgba(255,255,255,.05)"}}>
+      <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="🔍 Search…" style={{flex:1,padding:"8px 12px",borderRadius:10,background:"rgba(255,255,255,.06)",color:"#F0EEF8",fontSize:13,border:"1.5px solid rgba(255,255,255,.08)"}}/>
+      <button onClick={()=>setDrawer(o=>!o)} style={{padding:"8px 12px",borderRadius:10,background:"rgba(167,139,250,.12)",color:"#A78BFA",fontWeight:700,fontSize:12}}>Filter</button>
+      <button onClick={()=>openAdd(view==="calendar"?selDate:TODAY)} style={{padding:"8px 14px",borderRadius:10,background:"linear-gradient(135deg,#A78BFA,#60A5FA)",color:"#fff",fontWeight:800,fontSize:16,boxShadow:"0 0 12px rgba(167,139,250,.3)"}}>+</button>
+    </div>
+    <div style={{display:"flex",borderBottom:"1px solid rgba(255,255,255,.06)",flexShrink:0}}>
+      {[["today","📋 Today"],["calendar","📅 Calendar"],["all","📂 All"]].map(([v,lb])=>(
+        <button key={v} onClick={()=>setView(v)} style={{flex:1,padding:"10px 0",fontSize:12,fontWeight:700,background:"none",color:view===v?"#A78BFA":"rgba(240,238,248,.35)",borderBottom:view===v?"2px solid #A78BFA":"2px solid transparent"}}>{lb}</button>
+      ))}
+    </div>
+
+    {drawer&&<>
+      <div onClick={()=>setDrawer(false)} style={{position:"fixed",inset:0,background:"rgba(0,0,0,.6)",zIndex:100}}/>
+      <div className="drawer-anim" style={{position:"fixed",top:0,left:0,bottom:0,width:220,background:"#111118",borderRight:"1px solid rgba(167,139,250,.15)",zIndex:101,overflowY:"auto",padding:16}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}}>
+          <span style={{fontSize:11,fontWeight:800,opacity:.4}}>FILTERS</span>
+          <button onClick={()=>setDrawer(false)} style={{background:"none",color:"rgba(240,238,248,.4)",fontSize:16}}>✕</button>
+        </div>
+        <div style={{background:"rgba(167,139,250,.08)",borderRadius:12,padding:12,marginBottom:14}}>
+          <div style={{fontSize:9,fontWeight:800,letterSpacing:1,opacity:.5,marginBottom:6}}>TODAY</div>
+          <div style={{fontFamily:"'Syne',sans-serif",fontSize:28,fontWeight:800}}>{progress}%</div>
+          <div style={{height:4,background:"rgba(255,255,255,.08)",borderRadius:4,overflow:"hidden",marginTop:6}}>
+            <div style={{height:"100%",width:`${progress}%`,background:"linear-gradient(90deg,#A78BFA,#60A5FA)",borderRadius:4,transition:"width .6s ease"}}/>
+          </div>
+          <div style={{fontSize:10,opacity:.4,marginTop:4}}>{doneCnt}/{todayTasks.length} done</div>
+        </div>
+        {/* Quote */}
+        <div style={{background:"rgba(255,255,255,.03)",borderRadius:10,padding:10,marginBottom:14}}>
+          <div style={{fontSize:10,lineHeight:1.5,opacity:.5,fontStyle:"italic"}}>{quote}</div>
+        </div>
+        <div style={{fontSize:9,fontWeight:800,opacity:.4,marginBottom:8}}>CATEGORY</div>
+        {[["all","🗂️","All"],["academic","🎓","Academic"],["social","🎉","Social"],["health","💪","Health"],["errands","🛒","Errands"],["self","🧘","Self-care"],["finance","💰","Finance"],["work","💼","Work"],["creative","🎨","Creative"]].map(([k,ic,lb])=>(
+          <button key={k} onClick={()=>setFCat(k)} style={{display:"flex",alignItems:"center",gap:8,width:"100%",padding:"7px 10px",borderRadius:9,marginBottom:2,background:fCat===k?"rgba(167,139,250,.15)":"transparent",color:fCat===k?"#A78BFA":"rgba(240,238,248,.5)",fontSize:12,fontWeight:fCat===k?800:500,border:fCat===k?"1px solid rgba(167,139,250,.25)":"1px solid transparent"}}>
+            {ic} {lb}<span style={{marginLeft:"auto",fontSize:10,opacity:.4}}>{k==="all"?tasks.length:tasks.filter(t=>t.cat===k).length}</span>
+          </button>
+        ))}
+        <button onClick={()=>setShowDone(s=>!s)} style={{width:"100%",padding:"8px 10px",borderRadius:9,background:"rgba(255,255,255,.05)",color:"rgba(240,238,248,.5)",fontSize:12,fontWeight:600,marginTop:8,textAlign:"left"}}>{showDone?"👁 Hide completed":"👁 Show completed"}</button>
+      </div>
+    </>}
+
+    <div style={{flex:1,overflowY:"auto",padding:"14px 14px 10px"}}>
+      {view==="today"&&<div className="slide-up">
+        <div style={{marginBottom:14}}>
+          <div style={{fontFamily:"'Syne',sans-serif",fontSize:20,fontWeight:800}}>{new Date(TODAY+"T12:00:00").toLocaleDateString("en-US",{weekday:"long"})}</div>
+          <div style={{fontSize:11,opacity:.4}}>{new Date(TODAY+"T12:00:00").toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</div>
+          <div style={{display:"flex",alignItems:"center",gap:8,marginTop:8}}>
+            <div style={{flex:1,height:4,background:"rgba(255,255,255,.08)",borderRadius:4,overflow:"hidden"}}>
+              <div style={{height:"100%",width:`${progress}%`,background:"linear-gradient(90deg,#A78BFA,#60A5FA)",borderRadius:4,transition:"width .6s ease"}}/>
+            </div>
+            <span style={{fontSize:10,opacity:.4,whiteSpace:"nowrap"}}>{doneCnt}/{todayTasks.length}</span>
+          </div>
+        </div>
+        <TaskList tasks={viewTasks()} onTick={tick} onEdit={openEdit} onDel={delTask} confetti={confetti} openAdd={()=>openAdd(TODAY)}/>
+      </div>}
+
+      {view==="calendar"&&<div>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:12}}>
+          <button onClick={prevCal} style={{width:30,height:30,borderRadius:8,background:"rgba(255,255,255,.08)",color:"#F0EEF8",fontSize:16}}>‹</button>
+          <div style={{textAlign:"center"}}><div style={{fontFamily:"'Syne',sans-serif",fontSize:16,fontWeight:800}}>{MONTHS[calMonth]}</div><div style={{fontSize:10,opacity:.35}}>{calYear}</div></div>
+          <button onClick={nextCal} style={{width:30,height:30,borderRadius:8,background:"rgba(255,255,255,.08)",color:"#F0EEF8",fontSize:16}}>›</button>
+        </div>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:2,marginBottom:2}}>
+          {DAYS.map(d=><div key={d} style={{textAlign:"center",fontSize:8,fontWeight:800,opacity:.3,padding:"2px 0"}}>{d}</div>)}
+        </div>
+        <div key={animKey} style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:2,marginBottom:14,animation:"fadeIn .25s ease"}}>
+          {Array.from({length:fd(calYear,calMonth)}).map((_,i)=><div key={"e"+i}/>)}
+          {Array.from({length:dim(calYear,calMonth)}).map((_,i)=>{
+            const d=i+1,ds=`${calYear}-${String(calMonth+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+            const dts=tasks.filter(t=>t.date===ds),isT=ds===TODAY,isSel=ds===selDate;
+            return <div key={d} onClick={()=>setSelDate(ds)} style={{minHeight:52,borderRadius:7,padding:"4px 3px",background:isSel?"rgba(167,139,250,.18)":isT?"rgba(96,165,250,.1)":"rgba(255,255,255,.03)",border:isSel?"1.5px solid rgba(167,139,250,.5)":isT?"1.5px solid rgba(96,165,250,.3)":"1.5px solid transparent",cursor:"pointer"}}>
+              <div style={{fontSize:10,fontWeight:isT?900:700,color:isT?"#60A5FA":isSel?"#A78BFA":"rgba(240,238,248,.8)",marginBottom:2}}>{d}</div>
+              {dts.slice(0,2).map(t=>{const c=CATS[t.cat];return <div key={t.id} style={{fontSize:7,fontWeight:700,padding:"1px 2px",borderRadius:3,marginBottom:1,background:`${c.color}25`,color:c.color,overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis"}}>{c.icon}</div>;})}
+              {dts.length>2&&<div style={{fontSize:7,opacity:.3}}>+{dts.length-2}</div>}
+            </div>;
+          })}
+        </div>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
+          <div style={{fontSize:14,fontWeight:800}}>{new Date(selDate+"T12:00:00").toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"})}</div>
+          <button onClick={()=>openAdd(selDate)} style={{padding:"5px 12px",borderRadius:8,fontSize:11,fontWeight:800,background:"rgba(167,139,250,.12)",color:"#A78BFA"}}>+ Add</button>
+        </div>
+        <TaskList tasks={viewTasks()} onTick={tick} onEdit={openEdit} onDel={delTask} confetti={confetti} openAdd={()=>openAdd(selDate)}/>
+      </div>}
+
+      {view==="all"&&<div className="slide-up">
+        <div style={{fontFamily:"'Syne',sans-serif",fontSize:18,fontWeight:800,marginBottom:4}}>All Tasks</div>
+        <div style={{fontSize:11,opacity:.4,marginBottom:14}}>{tasks.filter(t=>!t.done).length} remaining · {tasks.filter(t=>t.done).length} completed</div>
+        {Object.entries(viewTasks().reduce((acc,t)=>{if(!acc[t.date])acc[t.date]=[];acc[t.date].push(t);return acc;},{})).sort(([a],[b])=>a.localeCompare(b)).map(([date,ts])=>(
+          <div key={date} style={{marginBottom:20}}>
+            <div style={{fontSize:9,fontWeight:800,letterSpacing:1,opacity:.4,marginBottom:8,paddingBottom:6,borderBottom:"1px solid rgba(255,255,255,.06)",display:"flex",alignItems:"center",gap:8}}>
+              <span>{new Date(date+"T12:00:00").toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"}).toUpperCase()}</span>
+              {date===TODAY&&<span style={{background:"#60A5FA",color:"#0A0A0F",borderRadius:4,padding:"1px 6px",fontSize:8,fontWeight:900}}>TODAY</span>}
+              <span style={{opacity:.4}}>{relDay(date)}</span>
+            </div>
+            <TaskList tasks={ts} onTick={tick} onEdit={openEdit} onDel={delTask} confetti={confetti} compact/>
+          </div>
+        ))}
+        {viewTasks().length===0&&<Empty onAdd={()=>openAdd(TODAY)}/>}
+      </div>}
+    </div>
+
+    {modal&&<Modal onClose={()=>setModal(false)} title={editId?"✏️ Edit Task":"✨ New Task"} actions={<>
+      <button onClick={()=>setModal(false)} style={{flex:1,padding:12,borderRadius:12,background:"rgba(255,255,255,.07)",color:"rgba(240,238,248,.6)",fontWeight:700,fontSize:14}}>Cancel</button>
+      {editId&&<button onClick={()=>delTask(editId)} style={{padding:"12px 14px",borderRadius:12,background:"rgba(251,113,133,.12)",color:"#FB7185",fontWeight:700,fontSize:14}}>Delete</button>}
+      <GBtn style={{flex:1}} onClick={saveTask}>Save</GBtn>
+    </>}>
+      <FIn placeholder="What do you need to do?" value={form.title} onChange={e=>setForm(f=>({...f,title:e.target.value}))} autoFocus/>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
+        <FSel value={form.cat} onChange={e=>setForm(f=>({...f,cat:e.target.value}))}>
+          {Object.entries(CATS).map(([k,v])=><option key={k} value={k}>{v.icon} {v.label}</option>)}
+        </FSel>
+        <FSel value={form.priority} onChange={e=>setForm(f=>({...f,priority:e.target.value}))}>
+          <option value="high">🔴 High</option><option value="medium">🟡 Medium</option><option value="low">🟢 Low</option>
+        </FSel>
+      </div>
+      {allCourses.length>0&&<FSel value={form.course} onChange={e=>setForm(f=>({...f,course:e.target.value}))}>
+        <option value="">No course linked</option>
+        {allCourses.map(c=><option key={c} value={c}>🎓 {c}</option>)}
+      </FSel>}
+      <FIn type="date" value={form.date} onChange={e=>setForm(f=>({...f,date:e.target.value}))}/>
+      <FIn placeholder="Notes (optional)…" value={form.note} onChange={e=>setForm(f=>({...f,note:e.target.value}))}/>
+    </Modal>}
+  </div>);
+}
+
+function TaskList({tasks,onTick,onEdit,onDel,confetti,openAdd,compact}){
+  if(!tasks.length)return <Empty onAdd={openAdd}/>;
+  return <div style={{display:"flex",flexDirection:"column",gap:compact?4:6}}>{tasks.map(t=><TaskRow key={t.id} task={t} onTick={onTick} onEdit={onEdit} onDel={onDel} confetti={confetti} compact={compact}/>)}</div>;
+}
+
+function TaskRow({task:t,onTick,onEdit,onDel,confetti,compact}){
+  const cat=CATS[t.cat],pri={high:"#FB7185",medium:"#FBBF24",low:"#34D399"}[t.priority];
+  return(<div style={{display:"flex",alignItems:"flex-start",gap:9,padding:compact?"8px 10px":"12px 12px",borderRadius:12,background:t.done?"rgba(255,255,255,.02)":"rgba(255,255,255,.04)",border:`1px solid ${t.done?"rgba(255,255,255,.04)":"rgba(255,255,255,.07)"}`,position:"relative",overflow:"visible",opacity:t.done?.55:1,transition:"opacity .2s"}}>
+    {confetti===t.id&&<div className="confetti">🎉</div>}
+    <button onClick={()=>onTick(t.id)} style={{width:22,height:22,borderRadius:7,flexShrink:0,marginTop:1,background:t.done?`${cat.color}28`:"rgba(255,255,255,.06)",border:t.done?`2px solid ${cat.color}`:"2px solid rgba(255,255,255,.15)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,transition:"all .2s"}}>
+      {t.done&&<span style={{color:cat.color,fontWeight:900}}>✓</span>}
+    </button>
+    <div style={{width:3,borderRadius:3,background:cat.color,flexShrink:0,alignSelf:"stretch",opacity:.7}}/>
+    <div style={{flex:1,minWidth:0,cursor:"pointer"}} onClick={()=>onEdit(t)}>
+      <div style={{fontSize:compact?12:13,fontWeight:700,textDecoration:t.done?"line-through":"none",color:t.done?"rgba(240,238,248,.3)":"#F0EEF8",marginBottom:2}}>{t.title}</div>
+      {t.note&&!compact&&<div style={{fontSize:10,opacity:.35,marginBottom:3}}>{t.note}</div>}
+      {t.course&&<div style={{fontSize:9,opacity:.45,marginBottom:3}}>📚 {t.course}</div>}
+      <div style={{display:"flex",alignItems:"center",gap:5,flexWrap:"wrap"}}>
+        <span style={{fontSize:9,fontWeight:700,padding:"1px 6px",borderRadius:4,background:`${cat.color}18`,color:cat.color}}>{cat.icon} {cat.label}</span>
+        <span style={{fontSize:9,fontWeight:700,padding:"1px 6px",borderRadius:4,background:`${pri}18`,color:pri}}>{t.priority}</span>
+        {!compact&&<span style={{fontSize:9,opacity:.3}}>{relDay(t.date)}</span>}
+      </div>
+    </div>
+    <button onClick={()=>onDel(t.id)} style={{width:22,height:22,borderRadius:6,background:"rgba(251,113,133,.08)",color:"#FB7185",fontSize:10,opacity:.5,flexShrink:0}}>✕</button>
+  </div>);
+}
+
+// ── Grades ───────────────────────────────────────────────────────────────────
+function GradesScreen({grades,setGrades,profile}){
+  const allCourses=[...((profile.department&&DEPARTMENTS[profile.department])||[]),...(profile.customCourses||[])];
+  const [modal,setModal]=useState(false);
+  const [form,setForm]=useState({course:"",score:"",credits:"3",semester:"1"});
+  const [editId,setEditId]=useState(null);
+  const gpa=calcGPA(grades);
+  const totalCr=grades.filter(g=>g.score!=="").reduce((s,g)=>s+Number(g.credits),0);
+  const gpaColor=gpa>=3.5?"#34D399":gpa>=2.5?"#FBBF24":"#FB7185";
+  const openAdd=()=>{setForm({course:allCourses[0]||"",score:"",credits:"3",semester:"1"});setEditId(null);setModal(true);};
+  const openEdit=g=>{setForm({course:g.course,score:g.score,credits:g.credits,semester:g.semester||"1"});setEditId(g.id);setModal(true);};
+  const save=()=>{if(!form.course)return;editId?setGrades(gs=>gs.map(g=>g.id===editId?{...g,...form}:g)):setGrades(gs=>[...gs,{...form,id:Date.now()}]);setModal(false);};
+  const del=id=>{setGrades(gs=>gs.filter(g=>g.id!==id));setModal(false);};
+  return(<div style={{height:"100%",overflowY:"auto",padding:16}}>
+    <div style={{background:"linear-gradient(135deg,rgba(167,139,250,.12),rgba(96,165,250,.12))",border:"1px solid rgba(167,139,250,.2)",borderRadius:16,padding:20,marginBottom:16,textAlign:"center"}}>
+      <div style={{fontSize:10,fontWeight:800,letterSpacing:1,opacity:.5,marginBottom:6}}>CUMULATIVE GPA</div>
+      <div style={{fontFamily:"'Syne',sans-serif",fontSize:52,fontWeight:800,color:gpaColor}}>{gpa.toFixed(2)}</div>
+      <div style={{fontSize:12,opacity:.4,marginTop:4}}>{totalCr} credit hours · {grades.length} courses</div>
+      <div style={{height:6,background:"rgba(255,255,255,.08)",borderRadius:6,overflow:"hidden",marginTop:12}}>
+        <div style={{height:"100%",width:`${(gpa/4)*100}%`,background:gpaColor,borderRadius:6,transition:"width .8s ease"}}/>
+      </div>
+      <div style={{display:"flex",justifyContent:"space-between",fontSize:9,opacity:.3,marginTop:4}}>
+        {["0.0","1.0","2.0","3.0","4.0"].map(v=><span key={v}>{v}</span>)}
+      </div>
+    </div>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
+      <div style={{fontFamily:"'Syne',sans-serif",fontSize:14,fontWeight:800}}>Course Grades</div>
+      <GBtn onClick={openAdd} style={{padding:"7px 14px",fontSize:12}}>+ Add Course</GBtn>
+    </div>
+    {grades.length===0&&<Empty msg="No grades yet. Add your first course!" onAdd={openAdd}/>}
+    {grades.map(g=>{
+      const gr=g.score!==""?getGrade(Number(g.score)):null;
+      const gc=gr?gr.gp>=3.5?"#34D399":gr.gp>=2?"#FBBF24":"#FB7185":"rgba(240,238,248,.3)";
+      return(<div key={g.id} onClick={()=>openEdit(g)} style={{display:"flex",alignItems:"center",gap:12,padding:"12px 14px",borderRadius:12,background:"rgba(255,255,255,.04)",border:"1px solid rgba(255,255,255,.07)",marginBottom:7,cursor:"pointer"}}>
+        <div style={{width:44,height:44,borderRadius:10,background:`${gc}18`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+          <div style={{fontFamily:"'Syne',sans-serif",fontSize:16,fontWeight:900,color:gc}}>{gr?gr.grade:"—"}</div>
+        </div>
+        <div style={{flex:1,minWidth:0}}>
+          <div style={{fontSize:13,fontWeight:700,overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis"}}>{g.course}</div>
+          <div style={{fontSize:10,opacity:.4,marginTop:2}}>{g.credits} credits · Sem {g.semester}{g.score!==""?` · ${g.score}%`:""}</div>
+        </div>
+        <div style={{fontSize:13,fontWeight:800,color:gc}}>{gr?gr.gp.toFixed(1):"—"}</div>
+      </div>);
+    })}
+    {modal&&<Modal onClose={()=>setModal(false)} title={editId?"✏️ Edit Grade":"📊 Add Grade"} actions={<>
+      <button onClick={()=>setModal(false)} style={{flex:1,padding:12,borderRadius:12,background:"rgba(255,255,255,.07)",color:"rgba(240,238,248,.6)",fontWeight:700,fontSize:14}}>Cancel</button>
+      {editId&&<button onClick={()=>del(editId)} style={{padding:"12px 14px",borderRadius:12,background:"rgba(251,113,133,.12)",color:"#FB7185",fontWeight:700,fontSize:14}}>Delete</button>}
+      <GBtn style={{flex:1}} onClick={save}>Save</GBtn>
+    </>}>
+      <FSel value={form.course} onChange={e=>setForm(f=>({...f,course:e.target.value}))}>
+        {allCourses.length?allCourses.map(c=><option key={c} value={c}>{c}</option>):<option value="">Add courses in Profile first</option>}
+        <option value="Other">Other…</option>
+      </FSel>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}}>
+        <FIn type="number" placeholder="Score %" min="0" max="100" value={form.score} onChange={e=>setForm(f=>({...f,score:e.target.value}))}/>
+        <FIn type="number" placeholder="Credits" min="1" max="6" value={form.credits} onChange={e=>setForm(f=>({...f,credits:e.target.value}))}/>
+        <FSel value={form.semester} onChange={e=>setForm(f=>({...f,semester:e.target.value}))}>
+          {["1","2","3","4","5","6","7","8"].map(s=><option key={s} value={s}>Sem {s}</option>)}
+        </FSel>
+      </div>
+      {form.score!==""&&<div style={{textAlign:"center",padding:10,borderRadius:10,background:"rgba(167,139,250,.1)"}}>
+        <span style={{fontSize:20,fontWeight:900,fontFamily:"'Syne',sans-serif",color:getGrade(Number(form.score)).gp>=3.5?"#34D399":getGrade(Number(form.score)).gp>=2?"#FBBF24":"#FB7185"}}>{getGrade(Number(form.score)).grade}</span>
+        <span style={{fontSize:12,opacity:.5,marginLeft:8}}>({getGrade(Number(form.score)).gp.toFixed(1)} GP)</span>
+      </div>}
+    </Modal>}
+  </div>);
+}
+
+// ── Pomodoro ─────────────────────────────────────────────────────────────────
+function PomodoroScreen(){
+  const MODES={focus:{label:"Focus",dur:25*60,color:"#A78BFA"},short:{label:"Short Break",dur:5*60,color:"#34D399"},long:{label:"Long Break",dur:15*60,color:"#60A5FA"}};
+  const [mode,setMode]=useState("focus");
+  const [secs,setSecs]=useState(MODES.focus.dur);
+  const [running,setRunning]=useState(false);
+  const [sessions,setSessions]=useState(()=>load("ul_pomo",0));
+  const [customM,setCustomM]=useState("");
+  const ref=useRef(null);
+  useEffect(()=>save("ul_pomo",sessions),[sessions]);
+  useEffect(()=>{setSecs(MODES[mode].dur);setRunning(false);},[mode]);
+  useEffect(()=>{
+    if(running){ref.current=setInterval(()=>setSecs(s=>{if(s<=1){clearInterval(ref.current);setRunning(false);if(mode==="focus")setSessions(n=>n+1);return 0;}return s-1;}),1000);}
+    else clearInterval(ref.current);
+    return()=>clearInterval(ref.current);
+  },[running,mode]);
+  const col=MODES[mode].color,pct=secs/MODES[mode].dur,r=80,circ=2*Math.PI*r;
+  return(<div style={{height:"100%",overflowY:"auto",padding:20,display:"flex",flexDirection:"column",alignItems:"center"}}>
+    <div style={{fontSize:10,fontWeight:800,opacity:.4,letterSpacing:1,marginBottom:14}}>STUDY TIMER</div>
+    <div style={{display:"flex",gap:6,marginBottom:24,background:"rgba(255,255,255,.05)",borderRadius:12,padding:4}}>
+      {Object.entries(MODES).map(([k,v])=>(
+        <button key={k} onClick={()=>setMode(k)} style={{padding:"7px 12px",borderRadius:9,fontSize:11,fontWeight:700,background:mode===k?`${v.color}25`:"transparent",color:mode===k?v.color:"rgba(240,238,248,.4)",border:mode===k?`1px solid ${v.color}40`:"1px solid transparent"}}>{v.label}</button>
+      ))}
+    </div>
+    <div style={{position:"relative",width:200,height:200,marginBottom:24}}>
+      <svg width="200" height="200" style={{transform:"rotate(-90deg)"}}>
+        <circle cx="100" cy="100" r={r} fill="none" stroke="rgba(255,255,255,.06)" strokeWidth="8"/>
+        <circle cx="100" cy="100" r={r} fill="none" stroke={col} strokeWidth="8" strokeLinecap="round" strokeDasharray={circ} strokeDashoffset={circ*(1-pct)} style={{transition:"stroke-dashoffset .5s ease",filter:`drop-shadow(0 0 8px ${col}60)`}}/>
+      </svg>
+      <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+        <div style={{fontFamily:"'Syne',sans-serif",fontSize:40,fontWeight:800,color:col}}>{fmtTime(secs)}</div>
+        <div style={{fontSize:11,opacity:.4,marginTop:2}}>{MODES[mode].label}</div>
+      </div>
+    </div>
+    <div style={{display:"flex",gap:10,marginBottom:18}}>
+      <button onClick={()=>{setSecs(MODES[mode].dur);setRunning(false);}} style={{width:48,height:48,borderRadius:14,background:"rgba(255,255,255,.07)",color:"rgba(240,238,248,.6)",fontSize:18}}>↺</button>
+      <button onClick={()=>setRunning(r=>!r)} style={{width:100,height:48,borderRadius:14,background:`linear-gradient(135deg,${col},${col}aa)`,color:"#fff",fontSize:15,fontWeight:800,boxShadow:`0 0 20px ${col}40`}}>{running?"⏸ Pause":"▶ Start"}</button>
+      <button onClick={()=>{clearInterval(ref.current);setRunning(false);setSecs(MODES[mode].dur);}} style={{width:48,height:48,borderRadius:14,background:"rgba(255,255,255,.07)",color:"rgba(240,238,248,.6)",fontSize:18}}>⏹</button>
+    </div>
+    <div style={{display:"flex",gap:6,alignItems:"center",marginBottom:20}}>
+      {Array.from({length:4}).map((_,i)=><div key={i} style={{width:14,height:14,borderRadius:4,background:i<sessions%4?col:"rgba(255,255,255,.1)",transition:"all .3s"}}/>)}
+      <span style={{fontSize:11,opacity:.4,marginLeft:4}}>{sessions} sessions</span>
+    </div>
+    <div style={{width:"100%",maxWidth:280,background:"rgba(255,255,255,.04)",borderRadius:12,padding:12,marginBottom:16}}>
+      <div style={{fontSize:9,fontWeight:800,opacity:.4,marginBottom:8,letterSpacing:1}}>CUSTOM DURATION</div>
+      <div style={{display:"flex",gap:8}}>
+        <FIn type="number" placeholder="Minutes (1-120)" value={customM} onChange={e=>setCustomM(e.target.value)} style={{flex:1}}/>
+        <button onClick={()=>{const m=parseInt(customM);if(m>0&&m<=120){setSecs(m*60);setRunning(false);}}} style={{padding:"10px 14px",borderRadius:10,background:"rgba(167,139,250,.2)",color:"#A78BFA",fontWeight:800,fontSize:13}}>Set</button>
+      </div>
+    </div>
+    <div style={{width:"100%",maxWidth:280,background:"rgba(255,255,255,.03)",borderRadius:12,padding:12}}>
+      <div style={{fontSize:9,fontWeight:800,opacity:.4,marginBottom:8,letterSpacing:1}}>POMODORO TIPS</div>
+      {["Focus 25 min, break 5 min","After 4 sessions → 15 min long break","Phone face-down during focus","One task per session works best"].map((t,i)=><div key={i} style={{fontSize:11,opacity:.45,marginBottom:5,paddingLeft:10,borderLeft:`2px solid ${col}40`}}>{t}</div>)}
+    </div>
+  </div>);
+}
+
+// ── Budget ───────────────────────────────────────────────────────────────────
+function BudgetScreen({budget,setBudget}){
+  const ECATS={food:"🍕 Food",transport:"🚌 Transport",books:"📚 Books",health:"💊 Health",social:"🎉 Social",clothing:"👕 Clothing",data:"📱 Data",other:"📦 Other"};
+  const [modal,setModal]=useState(false);
+  const [type,setType]=useState("expense");
+  const [form,setForm]=useState({desc:"",amount:"",cat:"food",date:todayStr()});
+  const [editId,setEditId]=useState(null);
+  const [limitInput,setLimitInput]=useState(String(budget.limit));
+  const totalIn=budget.income.reduce((s,i)=>s+Number(i.amount),0);
+  const totalEx=budget.expenses.reduce((s,e)=>s+Number(e.amount),0);
+  const balance=totalIn-totalEx;
+  const pct=budget.limit?Math.min((totalEx/budget.limit)*100,100):0;
+  const bc=pct>90?"#FB7185":pct>70?"#FBBF24":"#34D399";
+  const openAdd=t=>{setType(t);setForm({desc:"",amount:"",cat:"food",date:todayStr()});setEditId(null);setModal(true);};
+  const openEdit=(item,t)=>{setType(t);setForm({desc:item.desc,amount:String(item.amount),cat:item.cat||"other",date:item.date});setEditId(item.id);setModal(true);};
+  const save=()=>{
+    if(!form.amount||!form.desc)return;
+    const item={...form,id:editId||Date.now()};
+    if(type==="income"){editId?setBudget(b=>({...b,income:b.income.map(i=>i.id===editId?item:i)})):setBudget(b=>({...b,income:[...b.income,item]}));}
+    else{editId?setBudget(b=>({...b,expenses:b.expenses.map(e=>e.id===editId?item:e)})):setBudget(b=>({...b,expenses:[...b.expenses,item]}));}
+    setModal(false);
+  };
+  const del=()=>{if(type==="income")setBudget(b=>({...b,income:b.income.filter(i=>i.id!==editId)}));else setBudget(b=>({...b,expenses:b.expenses.filter(e=>e.id!==editId)}));setModal(false);};
+  const allTx=[...budget.income.map(i=>({...i,type:"income"})),...budget.expenses.map(e=>({...e,type:"expense"}))].sort((a,b)=>b.date.localeCompare(a.date));
+  return(<div style={{height:"100%",overflowY:"auto",padding:16}}>
+    <div style={{background:"linear-gradient(135deg,rgba(52,211,153,.1),rgba(96,165,250,.1))",border:"1px solid rgba(52,211,153,.2)",borderRadius:16,padding:18,marginBottom:14}}>
+      <div style={{fontSize:10,fontWeight:800,letterSpacing:1,opacity:.5,marginBottom:6}}>BALANCE</div>
+      <div style={{fontFamily:"'Syne',sans-serif",fontSize:36,fontWeight:800,color:balance>=0?"#34D399":"#FB7185"}}>{fmtM(balance)}</div>
+      <div style={{display:"flex",gap:20,marginTop:10}}>
+        <div><div style={{fontSize:10,opacity:.4}}>Income</div><div style={{fontSize:15,fontWeight:800,color:"#34D399"}}>+{fmtM(totalIn)}</div></div>
+        <div><div style={{fontSize:10,opacity:.4}}>Spent</div><div style={{fontSize:15,fontWeight:800,color:"#FB7185"}}>-{fmtM(totalEx)}</div></div>
+      </div>
+    </div>
+    <div style={{background:"rgba(255,255,255,.04)",borderRadius:14,padding:14,marginBottom:14}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
+        <div style={{fontSize:11,fontWeight:800,opacity:.5}}>MONTHLY LIMIT</div>
+        <div style={{fontSize:12,fontWeight:700,color:bc}}>{pct.toFixed(0)}% used</div>
+      </div>
+      <div style={{height:6,background:"rgba(255,255,255,.08)",borderRadius:6,overflow:"hidden",marginBottom:8}}>
+        <div style={{height:"100%",width:`${pct}%`,background:bc,borderRadius:6,transition:"width .6s ease"}}/>
+      </div>
+      <div style={{display:"flex",gap:8}}>
+        <FIn placeholder="Monthly limit (₦)" value={limitInput} onChange={e=>setLimitInput(e.target.value)} type="number" style={{flex:1}}/>
+        <button onClick={()=>setBudget(b=>({...b,limit:Number(limitInput)}))} style={{padding:"8px 12px",borderRadius:9,background:"rgba(167,139,250,.2)",color:"#A78BFA",fontWeight:700,fontSize:12}}>Set</button>
+      </div>
+    </div>
+    <div style={{display:"flex",gap:8,marginBottom:14}}>
+      <button onClick={()=>openAdd("income")} style={{flex:1,padding:"10px 0",borderRadius:12,background:"rgba(52,211,153,.1)",color:"#34D399",fontWeight:800,fontSize:13,border:"1px solid rgba(52,211,153,.2)"}}>+ Income</button>
+      <button onClick={()=>openAdd("expense")} style={{flex:1,padding:"10px 0",borderRadius:12,background:"rgba(251,113,133,.1)",color:"#FB7185",fontWeight:800,fontSize:13,border:"1px solid rgba(251,113,133,.2)"}}>+ Expense</button>
+    </div>
+    <div style={{fontFamily:"'Syne',sans-serif",fontSize:13,fontWeight:800,marginBottom:10,opacity:.7}}>Transactions</div>
+    {allTx.length===0&&<Empty msg="No transactions yet. Add income or expenses!"/>}
+    {allTx.map(tx=>(
+      <div key={tx.id} onClick={()=>openEdit(tx,tx.type)} style={{display:"flex",alignItems:"center",gap:10,padding:"11px 12px",borderRadius:11,background:"rgba(255,255,255,.04)",border:"1px solid rgba(255,255,255,.06)",marginBottom:6,cursor:"pointer"}}>
+        <div style={{width:36,height:36,borderRadius:9,background:tx.type==="income"?"rgba(52,211,153,.15)":"rgba(251,113,133,.1)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,flexShrink:0}}>{tx.type==="income"?"💵":(ECATS[tx.cat]||"📦").split(" ")[0]}</div>
+        <div style={{flex:1,minWidth:0}}>
+          <div style={{fontSize:13,fontWeight:700,overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis"}}>{tx.desc}</div>
+          <div style={{fontSize:10,opacity:.4}}>{tx.type==="expense"?(ECATS[tx.cat]||"Other").replace(/^.+\s/,""):"Income"} · {relDay(tx.date)}</div>
+        </div>
+        <div style={{fontSize:14,fontWeight:800,color:tx.type==="income"?"#34D399":"#FB7185",whiteSpace:"nowrap"}}>{tx.type==="income"?"+":"-"}{fmtM(tx.amount)}</div>
+      </div>
+    ))}
+    {modal&&<Modal onClose={()=>setModal(false)} title={editId?"✏️ Edit":"+"+" "+(type==="income"?"Income":"Expense")} actions={<>
+      <button onClick={()=>setModal(false)} style={{flex:1,padding:12,borderRadius:12,background:"rgba(255,255,255,.07)",color:"rgba(240,238,248,.6)",fontWeight:700,fontSize:14}}>Cancel</button>
+      {editId&&<button onClick={del} style={{padding:"12px 14px",borderRadius:12,background:"rgba(251,113,133,.12)",color:"#FB7185",fontWeight:700,fontSize:14}}>Delete</button>}
+      <GBtn style={{flex:1}} onClick={save}>Save</GBtn>
+    </>}>
+      <FIn placeholder="Description" value={form.desc} onChange={e=>setForm(f=>({...f,desc:e.target.value}))} autoFocus/>
+      <FIn type="number" placeholder="Amount (₦)" value={form.amount} onChange={e=>setForm(f=>({...f,amount:e.target.value}))}/>
+      {type==="expense"&&<FSel value={form.cat} onChange={e=>setForm(f=>({...f,cat:e.target.value}))}>
+        {Object.entries(ECATS).map(([k,v])=><option key={k} value={k}>{v}</option>)}
+      </FSel>}
+      <FIn type="date" value={form.date} onChange={e=>setForm(f=>({...f,date:e.target.value}))}/>
+    </Modal>}
+  </div>);
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
