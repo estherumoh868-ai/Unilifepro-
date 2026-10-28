@@ -1,0 +1,22 @@
+{
+  "background_color": "#0a0a0f",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "UniLife Pro",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "UniLife",
+  "start_url": "/UniLife Pro-/",
+  "theme_color": "#a78bfa",
+  "id": "/UniLife Pro-/",
+  "description": "Your complete student companion",
+  "lang": "en",
+  "display_override": [
+    "browser",
+    "window-controls-overlay"
+  ],
+  "categories": [
+    "lifestyle",
+    "social"
+  ]
+}
