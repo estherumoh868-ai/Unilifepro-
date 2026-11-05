@@ -53,7 +53,7 @@ window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();window.__ul
 (function(){try{
   const mk=n=>{const c=document.createElement("canvas");c.width=c.height=n;const x=c.getContext("2d");const g=x.createLinearGradient(0,0,n,n);g.addColorStop(0,"#A78BFA");g.addColorStop(1,"#60A5FA");x.fillStyle=g;x.fillRect(0,0,n,n);x.font=Math.round(n*.55)+"px serif";x.textAlign="center";x.textBaseline="middle";x.fillText("🎓",n/2,n*.54);return c.toDataURL("image/png");};
   const base=location.origin+location.pathname;
-  const m={name:"UniLife Pro",short_name:"UniLife",description:"Your student life, organised in one place",start_url:base,scope:base.replace(/[^/]*$/,""),display:"standalone",orientation:"portrait",background_color:"#0A0A0F",theme_color:"#A78BFA",icons:[{src:mk(192),sizes:"192x192",type:"image/png",purpose:"any"},{src:mk(512),sizes:"512x512",type:"image/png",purpose:"any"}]};
+  const m={name:"UniLife Planner",short_name:"UnilifePlanner",description:"Your student life, organised in one place",start_url:base,scope:base.replace(/[^/]*$/,""),display:"standalone",orientation:"portrait",background_color:"#0A0A0F",theme_color:"#A78BFA",icons:[{src:mk(192),sizes:"192x192",type:"image/png",purpose:"any"},{src:mk(512),sizes:"512x512",type:"image/png",purpose:"any"}]};
   let l=document.querySelector('link[rel="manifest"]');if(!l){l=document.createElement("link");l.rel="manifest";document.head.appendChild(l);}
   l.href=URL.createObjectURL(new Blob([JSON.stringify(m)],{type:"application/manifest+json"}));
   const ic=document.createElement("link");ic.rel="apple-touch-icon";ic.href=m.icons[0].src;document.head.appendChild(ic);
