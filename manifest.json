@@ -1,27 +1,21 @@
 {
-  "id": "/Unilifepro-/",
-  "name": "UniLife Pro",
-  "short_name": "UniLife",
-  "description": "Your complete student companion",
+  "name": "UniLifePlanner",
+  "short_name": "UniLifePlanner",
+  "description": "Your smart companion for university life.",
   "start_url": "/Unilifepro-/",
   "scope": "/Unilifepro-/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0a0a0f",
-  "theme_color": "#8a78fb",
-  "lang": "en",
-  "categories": [
-    "lifestyle",
-    "social"
-  ],
+  "background_color": "#F5EEFF",
+  "theme_color": "#6C35C9",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./icon-512.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
